@@ -1,0 +1,197 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+    <title>AI-Professor for Linear Algebra</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(to right, #CCCDEB, #88B3E4);
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            color: #000;
+        }
+        .loader {
+            border: 16px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 16px solid #3498db;
+            width: 120px;
+            height: 120px;
+            animation: spin 2s linear infinite;
+            display: none;
+            margin: 20px auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .chat-container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        .chat-box {
+            max-height: 500px;
+            overflow-y: auto;
+            padding-bottom: 20px;
+        }
+        .chat-bubble {
+            padding: 10px 15px;
+            margin: 10px 0;
+            border-radius: 10px;
+            max-width: 70%;
+            word-wrap: break-word;
+        }
+        .question {
+            background-color: #e1f5fe;
+            align-self: flex-end;
+            text-align: right;
+            margin-right: 20px;
+            color: #333;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        .answer {
+            background-color: #F5D6E3;
+            align-self: flex-start;
+            text-align: left;
+            margin-left: 20px;
+            color: #333;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        .form-group.d-flex {
+            align-items: center;
+        }
+        .btn-primary {
+            white-space: nowrap;
+            width: 80px;
+            background: #3498db;
+            border-color: #3498db;
+        }
+        .btn-primary:hover {
+            background: #2980b9;
+            border-color: #2980b9;
+        }
+        .form-control {
+            border: 2px solid #3498db;
+            border-radius: 20px;
+        }
+        .form-control:focus {
+            border-color: #2980b9;
+            box-shadow: none;
+        }
+        pre {
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 5px;
+            overflow: auto;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+</head>
+<body>
+<div class="container chat-container mt-5">
+    <h1 class="text-center">AI-Prof</h1>
+    <div id="chat-box" class="d-flex flex-column chat-box"></div>
+    <div class="form-group d-flex">
+        <input type="text" class="form-control mr-2" id="query" placeholder="输入你的问题" onkeydown="handleKeyDown(event)">
+        <button class="btn btn-primary" onclick="askQuestion()">提问</button>
+    </div>
+    <div id="loader" class="loader"></div>
+</div>
+
+<script>
+    function createBubble(content, type) {
+        var bubble = document.createElement('div');
+        bubble.className = 'chat-bubble ' + type;
+        bubble.innerHTML = marked.parse(content);
+        MathJax.typesetPromise([bubble]).then(() => {
+            console.log("MathJax typesetting completed.");
+        }).catch(err => {
+            console.error("MathJax typesetting error:", err);
+        });
+        return bubble;
+    }
+
+    function askQuestion() {
+        var query = document.getElementById("query").value;
+        var loader = document.getElementById("loader");
+        var chatBox = document.getElementById("chat-box");
+    
+        // 添加问题气泡
+        var questionBubble = createBubble(query, 'question');
+        chatBox.appendChild(questionBubble);
+        chatBox.scrollTop = chatBox.scrollHeight;
+    
+        // 清空输入框
+        document.getElementById("query").value = "";
+    
+        loader.style.display = 'block';
+    
+        fetch('http://49.52.18.227:5002/ask', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ query: query })
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                loader.style.display = 'none';
+                console.log("Received data:", data);
+    
+                // 添加回答气泡
+                var answerBubble = createBubble(data.answer, 'answer');
+                chatBox.appendChild(answerBubble);
+                chatBox.scrollTop = chatBox.scrollHeight;
+    
+                // 确保 MathJax 解析新内容
+                MathJax.typesetPromise([answerBubble]).then(() => {
+                    console.log("MathJax typesetting completed.");
+                }).catch(err => {
+                    console.error("MathJax typesetting error:", err);
+                });
+            })
+            .catch(error => {
+                loader.style.display = 'none';
+                var errorBubble = createBubble('出现错误，请稍后再试。', 'answer');
+                chatBox.appendChild(errorBubble);
+                console.error('There was a problem with the fetch operation:', error);
+            });
+    }    
+
+    function handleKeyDown(event) {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+            askQuestion();
+        }
+    }
+</script>
+</body>
+</html>
