@@ -2,12 +2,12 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+    <script src="{{ url_for('static', filename='local_libs/marked.min.js') }}"></script>
+    <script id="MathJax-script" async src="{{ url_for('static', filename='local_libs/tex-mml-chtml.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='local_libs/prism.min.css') }}" />
+    <script src="{{ url_for('static', filename='local_libs/prism.min.js') }}"></script>
     <title>AI-Professor for Linear Algebra</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='local_libs/bootstrap.min.css') }}" rel="stylesheet">
     <style>
         body {
             background: linear-gradient(to right, #CCCDEB, #88B3E4);

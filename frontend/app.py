@@ -1,10 +1,12 @@
 from flask import Flask, request, jsonify, render_template
 import requests
 from concurrent.futures import ThreadPoolExecutor
+from threading import Lock
 
 
 app = Flask(__name__)
 executor = ThreadPoolExecutor(max_workers=100)  # 设置线程池大小
+lock = Lock()  # 创建一个锁对象
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -26,8 +28,10 @@ def ask():
     data = request.json
     user_question = data.get('query')
 
-    future = executor.submit(fetch_answer, user_question)
-    answer = future.result()
+    # 使用锁确保在前一次调用返回结果之前不能再一次调用 API
+    with lock:
+        future = executor.submit(fetch_answer, user_question)
+        answer = future.result()
 
     return jsonify({'answer': answer})
 
