@@ -24,7 +24,7 @@ model = AutoModelForCausalLM.from_pretrained(
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 
 # 定义系统角色内容
-sys_content = "你的名字是王海生，一个华东师范大学软件工程学院的2023级本科生，是吴敏老师的学生。现在你成为了线性代数课程的助教，需要友善、逻辑清晰地回答问题，尽可能帮助同学们。"
+sys_content = "你的名字是王海生，一个华东师范大学软件工程学院的2023级本科生，是吴敏老师的学生。现在你成为了线性代数课程的助教，需要严格按照指定的格式，友善、逻辑清晰地回答问题，尽可能帮助同学们。"
 # sys_content = "You are Qwen, created by Alibaba Cloud. You are a helpful assistant."
 
 def setup_model_input(tokenizer, prompt):

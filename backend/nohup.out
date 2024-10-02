@@ -1,0 +1,82 @@
+[2024-10-02 13:03:01 +0800] [63723] [INFO] Starting gunicorn 23.0.0
+[2024-10-02 13:03:01 +0800] [63723] [INFO] Listening at: http://0.0.0.0:5000 (63723)
+[2024-10-02 13:03:01 +0800] [63723] [INFO] Using worker: sync
+[2024-10-02 13:03:01 +0800] [63730] [INFO] Booting worker with pid: 63730
+Loading checkpoint shards:   0%|          | 0/17 [00:00<?, ?it/s]Loading checkpoint shards:   6%|▌         | 1/17 [00:00<00:10,  1.51it/s]Loading checkpoint shards:  12%|█▏        | 2/17 [00:01<00:13,  1.14it/s]Loading checkpoint shards:  18%|█▊        | 3/17 [00:02<00:12,  1.11it/s]Loading checkpoint shards:  24%|██▎       | 4/17 [00:03<00:10,  1.19it/s]Loading checkpoint shards:  29%|██▉       | 5/17 [00:04<00:10,  1.10it/s]Loading checkpoint shards:  35%|███▌      | 6/17 [00:05<00:09,  1.13it/s]Loading checkpoint shards:  41%|████      | 7/17 [00:06<00:08,  1.15it/s]Loading checkpoint shards:  47%|████▋     | 8/17 [00:06<00:07,  1.18it/s]Loading checkpoint shards:  53%|█████▎    | 9/17 [00:07<00:06,  1.25it/s]Loading checkpoint shards:  59%|█████▉    | 10/17 [00:08<00:05,  1.32it/s]Loading checkpoint shards:  65%|██████▍   | 11/17 [00:08<00:04,  1.33it/s]Loading checkpoint shards:  71%|███████   | 12/17 [00:09<00:03,  1.32it/s]Loading checkpoint shards:  76%|███████▋  | 13/17 [00:10<00:03,  1.29it/s]Loading checkpoint shards:  82%|████████▏ | 14/17 [00:11<00:02,  1.15it/s]Loading checkpoint shards:  88%|████████▊ | 15/17 [00:12<00:01,  1.03it/s]Loading checkpoint shards:  94%|█████████▍| 16/17 [00:13<00:00,  1.12it/s]Loading checkpoint shards: 100%|██████████| 17/17 [00:14<00:00,  1.28it/s]Loading checkpoint shards: 100%|██████████| 17/17 [00:14<00:00,  1.21it/s]
+[2024-10-02 13:03:53 +0800] [63723] [INFO] Handling signal: hup
+[2024-10-02 13:03:53 +0800] [63723] [INFO] Hang up: Master
+[2024-10-02 13:03:53 +0800] [64043] [INFO] Booting worker with pid: 64043
+[2024-10-02 13:03:53 +0800] [63723] [ERROR] Worker (pid:63730) was sent SIGHUP!
+Loading checkpoint shards:   0%|          | 0/17 [00:00<?, ?it/s]Loading checkpoint shards:   6%|▌         | 1/17 [00:00<00:12,  1.31it/s]Loading checkpoint shards:  12%|█▏        | 2/17 [00:01<00:10,  1.45it/s]Loading checkpoint shards:  18%|█▊        | 3/17 [00:02<00:09,  1.44it/s]Loading checkpoint shards:  24%|██▎       | 4/17 [00:02<00:08,  1.48it/s]Loading checkpoint shards:  29%|██▉       | 5/17 [00:03<00:08,  1.39it/s]Loading checkpoint shards:  35%|███▌      | 6/17 [00:04<00:08,  1.37it/s]Loading checkpoint shards:  41%|████      | 7/17 [00:05<00:07,  1.33it/s]Loading checkpoint shards:  47%|████▋     | 8/17 [00:05<00:06,  1.37it/s]Loading checkpoint shards:  53%|█████▎    | 9/17 [00:06<00:06,  1.17it/s]Loading checkpoint shards:  59%|█████▉    | 10/17 [00:07<00:05,  1.21it/s]Loading checkpoint shards:  65%|██████▍   | 11/17 [00:08<00:04,  1.25it/s]Loading checkpoint shards:  71%|███████   | 12/17 [00:09<00:03,  1.26it/s]Loading checkpoint shards:  76%|███████▋  | 13/17 [00:10<00:03,  1.10it/s]Loading checkpoint shards:  82%|████████▏ | 14/17 [00:11<00:02,  1.18it/s]Loading checkpoint shards:  88%|████████▊ | 15/17 [00:11<00:01,  1.23it/s]Loading checkpoint shards:  94%|█████████▍| 16/17 [00:12<00:00,  1.27it/s]Loading checkpoint shards: 100%|██████████| 17/17 [00:13<00:00,  1.29it/s]Loading checkpoint shards: 100%|██████████| 17/17 [00:13<00:00,  1.28it/s]
+[2024-10-02 13:24:36 +0800] [65013] [INFO] Starting gunicorn 23.0.0
+[2024-10-02 13:24:36 +0800] [65013] [INFO] Listening at: http://0.0.0.0:5001 (65013)
+[2024-10-02 13:24:36 +0800] [65013] [INFO] Using worker: sync
+[2024-10-02 13:24:36 +0800] [65015] [INFO] Booting worker with pid: 65015
+/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/pydantic/_internal/_fields.py:132: UserWarning: Field "model_name" in HuggingFaceInferenceAPIEmbeddings has conflict with protected namespace "model_".
+
+You may be able to resolve this warning by setting `model_config['protected_namespaces'] = ()`.
+  warnings.warn(
+[2024-10-02 13:35:07 +0800] [63723] [INFO] Handling signal: term
+[2024-10-02 13:35:07 +0800] [65013] [INFO] Handling signal: term
+[2024-10-02 13:35:07 +0800] [64043] [INFO] Worker exiting (pid: 64043)
+[2024-10-02 13:35:07 +0800] [65015] [INFO] Worker exiting (pid: 65015)
+[2024-10-02 13:35:08 +0800] [65013] [INFO] Shutting down: Master
+[2024-10-02 13:35:08 +0800] [63723] [INFO] Shutting down: Master
+[2024-10-02 13:36:04 +0800] [65497] [INFO] Starting gunicorn 23.0.0
+[2024-10-02 13:36:04 +0800] [65497] [INFO] Listening at: http://0.0.0.0:5000 (65497)
+[2024-10-02 13:36:04 +0800] [65497] [INFO] Using worker: sync
+[2024-10-02 13:36:04 +0800] [65499] [INFO] Booting worker with pid: 65499
+Loading checkpoint shards:   0%|          | 0/17 [00:00<?, ?it/s]Loading checkpoint shards:   6%|▌         | 1/17 [00:00<00:12,  1.30it/s]Loading checkpoint shards:  12%|█▏        | 2/17 [00:01<00:10,  1.39it/s]Loading checkpoint shards:  18%|█▊        | 3/17 [00:02<00:09,  1.49it/s]Loading checkpoint shards:  24%|██▎       | 4/17 [00:02<00:08,  1.51it/s]Loading checkpoint shards:  29%|██▉       | 5/17 [00:03<00:08,  1.44it/s]Loading checkpoint shards:  35%|███▌      | 6/17 [00:04<00:07,  1.41it/s]Loading checkpoint shards:  41%|████      | 7/17 [00:05<00:08,  1.24it/s]Loading checkpoint shards:  47%|████▋     | 8/17 [00:05<00:07,  1.28it/s]Loading checkpoint shards:  53%|█████▎    | 9/17 [00:06<00:05,  1.36it/s]Loading checkpoint shards:  59%|█████▉    | 10/17 [00:07<00:05,  1.38it/s][2024-10-02 13:36:14 +0800] [65603] [INFO] Starting gunicorn 23.0.0
+[2024-10-02 13:36:14 +0800] [65603] [INFO] Listening at: http://0.0.0.0:5001 (65603)
+[2024-10-02 13:36:14 +0800] [65603] [INFO] Using worker: sync
+[2024-10-02 13:36:14 +0800] [65605] [INFO] Booting worker with pid: 65605
+Loading checkpoint shards:  65%|██████▍   | 11/17 [00:08<00:04,  1.29it/s]/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/pydantic/_internal/_fields.py:132: UserWarning: Field "model_name" in HuggingFaceInferenceAPIEmbeddings has conflict with protected namespace "model_".
+
+You may be able to resolve this warning by setting `model_config['protected_namespaces'] = ()`.
+  warnings.warn(
+Loading checkpoint shards:  71%|███████   | 12/17 [00:09<00:04,  1.17it/s]Loading checkpoint shards:  76%|███████▋  | 13/17 [00:09<00:03,  1.20it/s]Loading checkpoint shards:  82%|████████▏ | 14/17 [00:10<00:02,  1.22it/s]Loading checkpoint shards:  88%|████████▊ | 15/17 [00:11<00:01,  1.26it/s]Loading checkpoint shards:  94%|█████████▍| 16/17 [00:12<00:00,  1.14it/s]Loading checkpoint shards: 100%|██████████| 17/17 [00:13<00:00,  1.07it/s]Loading checkpoint shards: 100%|██████████| 17/17 [00:13<00:00,  1.25it/s]
+[2024-10-02 13:37:14 +0800] [65603] [INFO] Handling signal: hup
+[2024-10-02 13:37:14 +0800] [65603] [INFO] Hang up: Master
+[2024-10-02 13:37:14 +0800] [65995] [INFO] Booting worker with pid: 65995
+[2024-10-02 13:37:14 +0800] [65497] [INFO] Handling signal: hup
+[2024-10-02 13:37:14 +0800] [65497] [INFO] Hang up: Master
+[2024-10-02 13:37:14 +0800] [65603] [ERROR] Worker (pid:65605) was sent SIGHUP!
+[2024-10-02 13:37:14 +0800] [65996] [INFO] Booting worker with pid: 65996
+[2024-10-02 13:37:15 +0800] [65497] [ERROR] Worker (pid:65499) was sent SIGHUP!
+/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/pydantic/_internal/_fields.py:132: UserWarning: Field "model_name" in HuggingFaceInferenceAPIEmbeddings has conflict with protected namespace "model_".
+
+You may be able to resolve this warning by setting `model_config['protected_namespaces'] = ()`.
+  warnings.warn(
+Loading checkpoint shards:   0%|          | 0/17 [00:00<?, ?it/s]Loading checkpoint shards:   6%|▌         | 1/17 [00:00<00:11,  1.35it/s]Loading checkpoint shards:  12%|█▏        | 2/17 [00:01<00:11,  1.34it/s]Loading checkpoint shards:  18%|█▊        | 3/17 [00:02<00:10,  1.28it/s]Loading checkpoint shards:  24%|██▎       | 4/17 [00:03<00:12,  1.06it/s]Loading checkpoint shards:  29%|██▉       | 5/17 [00:04<00:12,  1.03s/it]Loading checkpoint shards:  35%|███▌      | 6/17 [00:05<00:11,  1.04s/it]Loading checkpoint shards:  41%|████      | 7/17 [00:06<00:09,  1.08it/s]Loading checkpoint shards:  47%|████▋     | 8/17 [00:07<00:07,  1.13it/s]Loading checkpoint shards:  53%|█████▎    | 9/17 [00:07<00:06,  1.21it/s]Loading checkpoint shards:  59%|█████▉    | 10/17 [00:09<00:07,  1.06s/it]Loading checkpoint shards:  65%|██████▍   | 11/17 [00:10<00:05,  1.01it/s]Loading checkpoint shards:  71%|███████   | 12/17 [00:11<00:04,  1.09it/s]Loading checkpoint shards:  76%|███████▋  | 13/17 [00:12<00:03,  1.03it/s]Loading checkpoint shards:  82%|████████▏ | 14/17 [00:12<00:02,  1.12it/s]Loading checkpoint shards:  88%|████████▊ | 15/17 [00:13<00:01,  1.21it/s]Loading checkpoint shards:  94%|█████████▍| 16/17 [00:14<00:00,  1.27it/s]Loading checkpoint shards: 100%|██████████| 17/17 [00:15<00:00,  1.28it/s]Loading checkpoint shards: 100%|██████████| 17/17 [00:15<00:00,  1.13it/s]
+[2024-10-02 13:40:10 +0800] [65497] [INFO] Handling signal: term
+[2024-10-02 13:40:10 +0800] [65603] [INFO] Handling signal: term
+[2024-10-02 13:40:10 +0800] [65996] [INFO] Worker exiting (pid: 65996)
+[2024-10-02 13:40:10 +0800] [65995] [INFO] Worker exiting (pid: 65995)
+[2024-10-02 13:40:10 +0800] [65497] [INFO] Shutting down: Master
+[2024-10-02 13:40:10 +0800] [65603] [INFO] Shutting down: Master
+[2024-10-02 13:42:48 +0800] [66822] [INFO] Starting gunicorn 23.0.0
+[2024-10-02 13:42:48 +0800] [66822] [INFO] Listening at: http://0.0.0.0:5000 (66822)
+[2024-10-02 13:42:48 +0800] [66822] [INFO] Using worker: sync
+[2024-10-02 13:42:48 +0800] [66824] [INFO] Booting worker with pid: 66824
+Loading checkpoint shards:   0%|          | 0/17 [00:00<?, ?it/s]Loading checkpoint shards:   6%|▌         | 1/17 [00:00<00:11,  1.42it/s]Loading checkpoint shards:  12%|█▏        | 2/17 [00:01<00:09,  1.51it/s]Loading checkpoint shards:  18%|█▊        | 3/17 [00:02<00:10,  1.39it/s]Loading checkpoint shards:  24%|██▎       | 4/17 [00:03<00:11,  1.15it/s][2024-10-02 13:42:53 +0800] [66906] [INFO] Starting gunicorn 23.0.0
+[2024-10-02 13:42:53 +0800] [66906] [INFO] Listening at: http://0.0.0.0:5001 (66906)
+[2024-10-02 13:42:53 +0800] [66906] [INFO] Using worker: sync
+[2024-10-02 13:42:53 +0800] [66908] [INFO] Booting worker with pid: 66908
+Loading checkpoint shards:  29%|██▉       | 5/17 [00:04<00:10,  1.15it/s]/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/pydantic/_internal/_fields.py:132: UserWarning: Field "model_name" in HuggingFaceInferenceAPIEmbeddings has conflict with protected namespace "model_".
+
+You may be able to resolve this warning by setting `model_config['protected_namespaces'] = ()`.
+  warnings.warn(
+Loading checkpoint shards:  35%|███▌      | 6/17 [00:04<00:09,  1.16it/s]Loading checkpoint shards:  41%|████      | 7/17 [00:05<00:09,  1.09it/s]Loading checkpoint shards:  47%|████▋     | 8/17 [00:06<00:07,  1.15it/s]Loading checkpoint shards:  53%|█████▎    | 9/17 [00:07<00:07,  1.11it/s]Loading checkpoint shards:  59%|█████▉    | 10/17 [00:08<00:05,  1.20it/s]Loading checkpoint shards:  65%|██████▍   | 11/17 [00:09<00:04,  1.23it/s]Loading checkpoint shards:  71%|███████   | 12/17 [00:10<00:04,  1.09it/s]Loading checkpoint shards:  76%|███████▋  | 13/17 [00:11<00:04,  1.01s/it]Loading checkpoint shards:  82%|████████▏ | 14/17 [00:12<00:03,  1.03s/it]Loading checkpoint shards:  88%|████████▊ | 15/17 [00:13<00:02,  1.06s/it]Loading checkpoint shards:  94%|█████████▍| 16/17 [00:14<00:00,  1.07it/s]Loading checkpoint shards: 100%|██████████| 17/17 [00:14<00:00,  1.21it/s]Loading checkpoint shards: 100%|██████████| 17/17 [00:14<00:00,  1.14it/s]
+[2024-10-02 13:43:10 +0800] [66822] [INFO] Handling signal: hup
+[2024-10-02 13:43:10 +0800] [66906] [INFO] Handling signal: hup
+[2024-10-02 13:43:10 +0800] [66906] [INFO] Hang up: Master
+[2024-10-02 13:43:10 +0800] [66822] [INFO] Hang up: Master
+[2024-10-02 13:43:10 +0800] [67221] [INFO] Booting worker with pid: 67221
+[2024-10-02 13:43:10 +0800] [67222] [INFO] Booting worker with pid: 67222
+[2024-10-02 13:43:10 +0800] [66906] [ERROR] Worker (pid:66908) was sent SIGHUP!
+[2024-10-02 13:43:10 +0800] [66822] [ERROR] Worker (pid:66824) was sent SIGHUP!
+/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/pydantic/_internal/_fields.py:132: UserWarning: Field "model_name" in HuggingFaceInferenceAPIEmbeddings has conflict with protected namespace "model_".
+
+You may be able to resolve this warning by setting `model_config['protected_namespaces'] = ()`.
+  warnings.warn(
+Loading checkpoint shards:   0%|          | 0/17 [00:00<?, ?it/s]Loading checkpoint shards:   6%|▌         | 1/17 [00:00<00:11,  1.35it/s]Loading checkpoint shards:  12%|█▏        | 2/17 [00:01<00:11,  1.27it/s]Loading checkpoint shards:  18%|█▊        | 3/17 [00:02<00:10,  1.31it/s]Loading checkpoint shards:  24%|██▎       | 4/17 [00:03<00:13,  1.01s/it]Loading checkpoint shards:  29%|██▉       | 5/17 [00:05<00:13,  1.15s/it]Loading checkpoint shards:  35%|███▌      | 6/17 [00:05<00:11,  1.04s/it]Loading checkpoint shards:  41%|████      | 7/17 [00:06<00:09,  1.02it/s]Loading checkpoint shards:  47%|████▋     | 8/17 [00:07<00:08,  1.11it/s]Loading checkpoint shards:  53%|█████▎    | 9/17 [00:08<00:06,  1.18it/s]Loading checkpoint shards:  59%|█████▉    | 10/17 [00:08<00:05,  1.23it/s]Loading checkpoint shards:  65%|██████▍   | 11/17 [00:09<00:05,  1.19it/s]Loading checkpoint shards:  71%|███████   | 12/17 [00:10<00:04,  1.18it/s]Loading checkpoint shards:  76%|███████▋  | 13/17 [00:11<00:03,  1.23it/s]Loading checkpoint shards:  82%|████████▏ | 14/17 [00:12<00:02,  1.28it/s]Loading checkpoint shards:  88%|████████▊ | 15/17 [00:12<00:01,  1.35it/s]Loading checkpoint shards:  94%|█████████▍| 16/17 [00:13<00:00,  1.40it/s]Loading checkpoint shards: 100%|██████████| 17/17 [00:13<00:00,  1.53it/s]Loading checkpoint shards: 100%|██████████| 17/17 [00:13<00:00,  1.22it/s]

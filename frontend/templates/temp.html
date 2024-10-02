@@ -3,30 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>渲染 LaTeX 公式</title>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            padding: 20px;
-        }
-    </style>
+    <title>代码高亮示例</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.js"></script>
 </head>
 <body>
-    <h1>一元二次方程的求根公式</h1>
+    <h1>矩阵乘法示例</h1>
     <div id="content"></div>
 
     <script>
+        // 假设这是从后端获取的 response
         const response = {
-            "response": "求根公式主要用于解一元二次方程 \\(ax^2 + bx + c = 0\\)，其中 \\(a, b, c\\) 是常数，且 \\(a \\neq 0\\)。求根公式如下：\n\n\\[ x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a} \\]\n\n这个公式给出了方程的两个根（可能相同）。其中，\\(\\pm\\) 表示有两个解，一个是加号的情况，另一个是减号的情况。\n\n下面是详细的推导步骤：\n\n1. 从一元二次方程开始：\n   \\[ ax^2 + bx + c = 0 \\]\n\n2. 将常数项移到等式右边：\n   \\[ ax^2 + bx = -c \\]\n\n3. 两边同时除以 \\(a\\)：\n   \\[ x^2 + \\frac{b}{a}x = -\\frac{c}{a} \\]\n\n4. 配平方，添加 \\(\\left(\\frac{b}{2a}\\right)^2\\)：\n   \\[ x^2 + \\frac{b}{a}x + \\left(\\frac{b}{2a}\\right)^2 = -\\frac{c}{a} + \\left(\\frac{b}{2a}\\right)^2 \\]\n\n5. 左边成为完全平方形式：\n   \\[ \\left(x + \\frac{b}{2a}\\right)^2 = \\frac{b^2 - 4ac}{4a^2} \\]\n\n6. 开平方：\n   \\[ x + \\frac{b}{2a} = \\pm \\sqrt{\\frac{b^2 - 4ac}{4a^2}} \\]\n\n7. 解得 \\(x\\)：\n   \\[ x = -\\frac{b}{2a} \\pm \\frac{\\sqrt{b^2 - 4ac}}{2a} \\]\n\n8. 最终得到求根公式：\n   \\[ x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a} \\]\n\n以上就是一元二次方程的求根公式的详细推导过程。"
+            "response": "当然可以！下面是一个用Python代码进行矩阵乘法的例子。\n\n### Python 代码示例\n\n```python\nimport numpy as np\n\n# 定义两个矩阵\nA = np.array([[1, 2],\n              [3, 4]])\n\nB = np.array([[5, 6],\n              [7, 8]])\n\n# 计算矩阵乘法\nC = np.dot(A, B)\n\n# 输出结果\nprint(\"矩阵 A:\")\nprint(A)\nprint(\"\\n矩阵 B:\")\nprint(B)\nprint(\"\\n矩阵 A 和 B 的乘积 C:\")\nprint(C)\n"
         };
 
-        // 渲染内容
-        document.getElementById('content').innerHTML = response.response;
+        // 处理 response 内容并插入到页面中
+        const contentDiv = document.getElementById('content');
+        let responseContent = response.response
+            .replace(/```python/g, '<pre><code class="language-python">')
+            .replace(/```/g, '</code></pre>');
 
-        // 调用 MathJax 渲染 LaTeX
-        MathJax.typeset();
+        contentDiv.innerHTML = responseContent;
+
+        // 使用 Prism.js 进行高亮
+        Prism.highlightAll();
     </script>
 </body>
 </html>

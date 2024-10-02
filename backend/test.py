@@ -2,7 +2,6 @@ import sys
 print(sys.executable)
 
 
-
 import torch  
   
 # 检查CUDA是否可用  

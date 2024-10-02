@@ -1,0 +1,594 @@
+[2024-10-02 13:36:24 +0800] [65780] [INFO] Starting gunicorn 23.0.0
+[2024-10-02 13:36:24 +0800] [65780] [INFO] Listening at: http://0.0.0.0:5002 (65780)
+[2024-10-02 13:36:24 +0800] [65780] [INFO] Using worker: sync
+[2024-10-02 13:36:24 +0800] [65782] [INFO] Booting worker with pid: 65782
+[2024-10-02 13:36:24 +0800] [65783] [INFO] Booting worker with pid: 65783
+[2024-10-02 13:36:24 +0800] [65784] [INFO] Booting worker with pid: 65784
+[2024-10-02 13:36:24 +0800] [65782] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+    worker.init_process()
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/workers/base.py", line 135, in init_process
+    self.load_wsgi()
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+    return self.load_wsgiapp()
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/util.py", line 370, in import_app
+    mod = importlib.import_module(module)
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/whs/ai-prof/frontend/app.py", line 5, in <module>
+    from redis_lock import Lock
+ImportError: cannot import name 'Lock' from 'redis_lock' (/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/redis_lock/__init__.py)
+[2024-10-02 13:36:24 +0800] [65782] [INFO] Worker exiting (pid: 65782)
+[2024-10-02 13:36:24 +0800] [65783] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+    worker.init_process()
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/workers/base.py", line 135, in init_process
+    self.load_wsgi()
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+    return self.load_wsgiapp()
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/util.py", line 370, in import_app
+    mod = importlib.import_module(module)
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/whs/ai-prof/frontend/app.py", line 5, in <module>
+    from redis_lock import Lock
+ImportError: cannot import name 'Lock' from 'redis_lock' (/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/redis_lock/__init__.py)
+[2024-10-02 13:36:24 +0800] [65783] [INFO] Worker exiting (pid: 65783)
+[2024-10-02 13:36:24 +0800] [65784] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+    worker.init_process()
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/workers/base.py", line 135, in init_process
+    self.load_wsgi()
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+    return self.load_wsgiapp()
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/util.py", line 370, in import_app
+    mod = importlib.import_module(module)
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/whs/ai-prof/frontend/app.py", line 5, in <module>
+    from redis_lock import Lock
+ImportError: cannot import name 'Lock' from 'redis_lock' (/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/redis_lock/__init__.py)
+[2024-10-02 13:36:24 +0800] [65784] [INFO] Worker exiting (pid: 65784)
+[2024-10-02 13:36:24 +0800] [65780] [ERROR] Worker (pid:65782) exited with code 3
+[2024-10-02 13:36:24 +0800] [65780] [ERROR] Worker (pid:65784) was sent SIGTERM!
+[2024-10-02 13:36:24 +0800] [65780] [ERROR] Worker (pid:65783) was sent SIGTERM!
+[2024-10-02 13:36:24 +0800] [65780] [ERROR] Shutting down: Master
+[2024-10-02 13:36:24 +0800] [65780] [ERROR] Reason: Worker failed to boot.
+[2024-10-02 13:37:24 +0800] [66217] [INFO] Starting gunicorn 23.0.0
+[2024-10-02 13:37:24 +0800] [66217] [INFO] Listening at: http://0.0.0.0:5002 (66217)
+[2024-10-02 13:37:24 +0800] [66217] [INFO] Using worker: sync
+[2024-10-02 13:37:24 +0800] [66219] [INFO] Booting worker with pid: 66219
+[2024-10-02 13:37:24 +0800] [66220] [INFO] Booting worker with pid: 66220
+[2024-10-02 13:37:24 +0800] [66221] [INFO] Booting worker with pid: 66221
+[2024-10-02 13:37:24 +0800] [66222] [INFO] Booting worker with pid: 66222
+[2024-10-02 13:37:24 +0800] [66223] [INFO] Booting worker with pid: 66223
+[2024-10-02 13:37:24 +0800] [66219] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+    worker.init_process()
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/workers/base.py", line 135, in init_process
+    self.load_wsgi()
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+    return self.load_wsgiapp()
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/util.py", line 370, in import_app
+    mod = importlib.import_module(module)
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/whs/ai-prof/frontend/app.py", line 5, in <module>
+    from redis_lock import Lock
+ImportError: cannot import name 'Lock' from 'redis_lock' (/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/redis_lock/__init__.py)
+[2024-10-02 13:37:24 +0800] [66219] [INFO] Worker exiting (pid: 66219)
+[2024-10-02 13:37:24 +0800] [66221] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+    worker.init_process()
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/workers/base.py", line 135, in init_process
+    self.load_wsgi()
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+    return self.load_wsgiapp()
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/util.py", line 370, in import_app
+    mod = importlib.import_module(module)
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/whs/ai-prof/frontend/app.py", line 5, in <module>
+    from redis_lock import Lock
+ImportError: cannot import name 'Lock' from 'redis_lock' (/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/redis_lock/__init__.py)
+[2024-10-02 13:37:24 +0800] [66221] [INFO] Worker exiting (pid: 66221)
+[2024-10-02 13:37:24 +0800] [66224] [INFO] Booting worker with pid: 66224
+[2024-10-02 13:37:24 +0800] [66217] [ERROR] Worker (pid:66219) exited with code 3
+[2024-10-02 13:37:24 +0800] [66220] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+    worker.init_process()
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/workers/base.py", line 135, in init_process
+    self.load_wsgi()
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+    return self.load_wsgiapp()
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/util.py", line 370, in import_app
+    mod = importlib.import_module(module)
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/whs/ai-prof/frontend/app.py", line 5, in <module>
+    from redis_lock import Lock
+ImportError: cannot import name 'Lock' from 'redis_lock' (/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/redis_lock/__init__.py)
+[2024-10-02 13:37:24 +0800] [66220] [INFO] Worker exiting (pid: 66220)
+[2024-10-02 13:37:24 +0800] [66217] [ERROR] Worker (pid:66221) was sent SIGTERM!
+[2024-10-02 13:37:24 +0800] [66217] [ERROR] Worker (pid:66220) exited with code 3
+Traceback (most recent call last):
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/arbiter.py", line 201, in run
+    self.manage_workers()
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/arbiter.py", line 570, in manage_workers
+    self.spawn_workers()
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/arbiter.py", line 642, in spawn_workers
+    time.sleep(0.1 * random.random())
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/arbiter.py", line 241, in handle_chld
+    self.reap_workers()
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/arbiter.py", line 529, in reap_workers
+    raise HaltServer(reason, self.WORKER_BOOT_ERROR)
+gunicorn.errors.HaltServer: <HaltServer 'Worker failed to boot.' 3>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/whs/anaconda3/envs/ai-prof/bin/gunicorn", line 8, in <module>
+    sys.exit(run())
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 66, in run
+    WSGIApplication("%(prog)s [OPTIONS] [APP_MODULE]", prog=prog).run()
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/app/base.py", line 235, in run
+    super().run()
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/app/base.py", line 71, in run
+    Arbiter(self).run()
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/arbiter.py", line 228, in run
+    self.halt(reason=inst.reason, exit_status=inst.exit_status)
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/arbiter.py", line 341, in halt
+    self.stop()
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/arbiter.py", line 395, in stop
+    time.sleep(0.1)
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/arbiter.py", line 241, in handle_chld
+    self.reap_workers()
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/arbiter.py", line 529, in reap_workers
+    raise HaltServer(reason, self.WORKER_BOOT_ERROR)
+gunicorn.errors.HaltServer: <HaltServer 'Worker failed to boot.' 3>
+[2024-10-02 13:37:24 +0800] [66222] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+    worker.init_process()
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/workers/base.py", line 135, in init_process
+    self.load_wsgi()
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+    return self.load_wsgiapp()
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/util.py", line 370, in import_app
+    mod = importlib.import_module(module)
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/whs/ai-prof/frontend/app.py", line 5, in <module>
+    from redis_lock import Lock
+ImportError: cannot import name 'Lock' from 'redis_lock' (/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/redis_lock/__init__.py)
+[2024-10-02 13:37:24 +0800] [66222] [INFO] Worker exiting (pid: 66222)
+[2024-10-02 13:37:24 +0800] [66223] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+    worker.init_process()
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/workers/base.py", line 135, in init_process
+    self.load_wsgi()
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+    return self.load_wsgiapp()
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/util.py", line 370, in import_app
+    mod = importlib.import_module(module)
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/whs/ai-prof/frontend/app.py", line 5, in <module>
+    from redis_lock import Lock
+ImportError: cannot import name 'Lock' from 'redis_lock' (/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/redis_lock/__init__.py)
+[2024-10-02 13:37:24 +0800] [66223] [INFO] Worker exiting (pid: 66223)
+[2024-10-02 13:37:24 +0800] [66224] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+    worker.init_process()
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/workers/base.py", line 135, in init_process
+    self.load_wsgi()
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+    return self.load_wsgiapp()
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/util.py", line 370, in import_app
+    mod = importlib.import_module(module)
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/whs/ai-prof/frontend/app.py", line 5, in <module>
+    from redis_lock import Lock
+ImportError: cannot import name 'Lock' from 'redis_lock' (/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/redis_lock/__init__.py)
+[2024-10-02 13:37:24 +0800] [66224] [INFO] Worker exiting (pid: 66224)
+[2024-10-02 13:55:57 +0800] [70000] [INFO] Starting gunicorn 23.0.0
+[2024-10-02 13:55:57 +0800] [70000] [INFO] Listening at: http://0.0.0.0:5002 (70000)
+[2024-10-02 13:55:57 +0800] [70000] [INFO] Using worker: sync
+[2024-10-02 13:55:57 +0800] [70002] [INFO] Booting worker with pid: 70002
+[2024-10-02 13:55:57 +0800] [70003] [INFO] Booting worker with pid: 70003
+[2024-10-02 13:55:57 +0800] [70004] [INFO] Booting worker with pid: 70004
+[2024-10-02 13:55:57 +0800] [70005] [INFO] Booting worker with pid: 70005
+[2024-10-02 13:55:58 +0800] [70006] [INFO] Booting worker with pid: 70006
+[2024-10-02 13:55:58 +0800] [70007] [INFO] Booting worker with pid: 70007
+[2024-10-02 13:55:58 +0800] [70008] [INFO] Booting worker with pid: 70008
+[2024-10-02 13:55:58 +0800] [70009] [INFO] Booting worker with pid: 70009
+[2024-10-02 13:55:58 +0800] [70010] [INFO] Booting worker with pid: 70010
+[2024-10-02 13:55:58 +0800] [70011] [INFO] Booting worker with pid: 70011
+[2024-10-02 13:55:58 +0800] [70012] [INFO] Booting worker with pid: 70012
+[2024-10-02 13:55:58 +0800] [70013] [INFO] Booting worker with pid: 70013
+[2024-10-02 13:55:58 +0800] [70014] [INFO] Booting worker with pid: 70014
+[2024-10-02 13:55:58 +0800] [70015] [INFO] Booting worker with pid: 70015
+[2024-10-02 13:55:58 +0800] [70016] [INFO] Booting worker with pid: 70016
+[2024-10-02 13:55:58 +0800] [70017] [INFO] Booting worker with pid: 70017
+[2024-10-02 13:55:58 +0800] [70018] [INFO] Booting worker with pid: 70018
+[2024-10-02 13:55:58 +0800] [70019] [INFO] Booting worker with pid: 70019
+[2024-10-02 13:55:58 +0800] [70020] [INFO] Booting worker with pid: 70020
+[2024-10-02 13:55:58 +0800] [70021] [INFO] Booting worker with pid: 70021
+[2024-10-02 13:55:58 +0800] [70022] [INFO] Booting worker with pid: 70022
+[2024-10-02 13:55:58 +0800] [70023] [INFO] Booting worker with pid: 70023
+[2024-10-02 13:55:58 +0800] [70024] [INFO] Booting worker with pid: 70024
+[2024-10-02 13:55:58 +0800] [70058] [INFO] Booting worker with pid: 70058
+[2024-10-02 13:55:58 +0800] [70059] [INFO] Booting worker with pid: 70059
+[2024-10-02 13:55:58 +0800] [70060] [INFO] Booting worker with pid: 70060
+[2024-10-02 13:55:58 +0800] [70061] [INFO] Booting worker with pid: 70061
+[2024-10-02 13:55:58 +0800] [70062] [INFO] Booting worker with pid: 70062
+[2024-10-02 13:55:58 +0800] [70063] [INFO] Booting worker with pid: 70063
+[2024-10-02 13:55:59 +0800] [70064] [INFO] Booting worker with pid: 70064
+[2024-10-02 13:55:59 +0800] [70065] [INFO] Booting worker with pid: 70065
+[2024-10-02 13:55:59 +0800] [70066] [INFO] Booting worker with pid: 70066
+[2024-10-02 13:55:59 +0800] [70067] [INFO] Booting worker with pid: 70067
+[2024-10-02 13:55:59 +0800] [70068] [INFO] Booting worker with pid: 70068
+[2024-10-02 13:55:59 +0800] [70069] [INFO] Booting worker with pid: 70069
+[2024-10-02 13:55:59 +0800] [70070] [INFO] Booting worker with pid: 70070
+[2024-10-02 13:55:59 +0800] [70071] [INFO] Booting worker with pid: 70071
+[2024-10-02 13:55:59 +0800] [70072] [INFO] Booting worker with pid: 70072
+[2024-10-02 13:55:59 +0800] [70073] [INFO] Booting worker with pid: 70073
+[2024-10-02 13:55:59 +0800] [70074] [INFO] Booting worker with pid: 70074
+[2024-10-02 13:55:59 +0800] [70075] [INFO] Booting worker with pid: 70075
+[2024-10-02 13:55:59 +0800] [70076] [INFO] Booting worker with pid: 70076
+[2024-10-02 13:55:59 +0800] [70077] [INFO] Booting worker with pid: 70077
+[2024-10-02 13:55:59 +0800] [70078] [INFO] Booting worker with pid: 70078
+[2024-10-02 13:55:59 +0800] [70130] [INFO] Booting worker with pid: 70130
+[2024-10-02 13:55:59 +0800] [70131] [INFO] Booting worker with pid: 70131
+[2024-10-02 13:55:59 +0800] [70132] [INFO] Booting worker with pid: 70132
+[2024-10-02 13:56:00 +0800] [70133] [INFO] Booting worker with pid: 70133
+[2024-10-02 13:56:00 +0800] [70134] [INFO] Booting worker with pid: 70134
+[2024-10-02 13:56:00 +0800] [70135] [INFO] Booting worker with pid: 70135
+[2024-10-02 13:56:00 +0800] [70136] [INFO] Booting worker with pid: 70136
+[2024-10-02 13:56:00 +0800] [70137] [INFO] Booting worker with pid: 70137
+[2024-10-02 13:56:00 +0800] [70138] [INFO] Booting worker with pid: 70138
+[2024-10-02 13:56:00 +0800] [70139] [INFO] Booting worker with pid: 70139
+[2024-10-02 13:56:00 +0800] [70140] [INFO] Booting worker with pid: 70140
+[2024-10-02 13:56:00 +0800] [70141] [INFO] Booting worker with pid: 70141
+[2024-10-02 13:56:17 +0800] [70000] [INFO] Handling signal: hup
+[2024-10-02 13:56:17 +0800] [70000] [INFO] Hang up: Master
+[2024-10-02 13:56:17 +0800] [70000] [ERROR] Worker (pid:70064) was sent SIGHUP!
+[2024-10-02 13:56:17 +0800] [70000] [ERROR] Worker (pid:70018) was sent SIGHUP!
+[2024-10-02 13:56:17 +0800] [70000] [ERROR] Worker (pid:70019) was sent SIGHUP!
+[2024-10-02 13:56:17 +0800] [70000] [ERROR] Worker (pid:70065) was sent SIGHUP!
+[2024-10-02 13:56:17 +0800] [70000] [ERROR] Worker (pid:70069) was sent SIGHUP!
+[2024-10-02 13:56:17 +0800] [70000] [ERROR] Worker (pid:70062) was sent SIGHUP!
+[2024-10-02 13:56:17 +0800] [70000] [ERROR] Worker (pid:70136) was sent SIGHUP!
+[2024-10-02 13:56:17 +0800] [70000] [ERROR] Worker (pid:70133) was sent SIGHUP!
+[2024-10-02 13:56:17 +0800] [70000] [ERROR] Worker (pid:70067) was sent SIGHUP!
+--- Logging error ---
+[2024-10-02 13:56:17 +0800] [70000] [ERROR] Worker (pid:70070) was sent SIGHUP!
+[2024-10-02 13:56:17 +0800] [70000] [ERROR] Worker (pid:70068) was sent SIGHUP!
+[2024-10-02 13:56:17 +0800] [70000] [ERROR] Worker (pid:70022) was sent SIGHUP!
+[2024-10-02 13:56:17 +0800] [70000] [ERROR] Worker (pid:70139) was sent SIGHUP!
+[2024-10-02 13:56:17 +0800] [70000] [ERROR] Worker (pid:70131) was sent SIGHUP!
+[2024-10-02 13:56:17 +0800] [70000] [ERROR] Worker (pid:70002) was sent SIGHUP!
+[2024-10-02 13:56:17 +0800] [70000] [ERROR] Worker (pid:70003) was sent SIGHUP!
+[2024-10-02 13:56:17 +0800] [70000] [ERROR] Worker (pid:70004) was sent SIGHUP!
+[2024-10-02 13:56:17 +0800] [70000] [ERROR] Worker (pid:70005) was sent SIGHUP!
+[2024-10-02 13:56:17 +0800] [70000] [ERROR] Worker (pid:70006) was sent SIGHUP!
+[2024-10-02 13:56:17 +0800] [70000] [ERROR] Worker (pid:70007) was sent SIGHUP!
+[2024-10-02 13:56:17 +0800] [70000] [ERROR] Worker (pid:70008) was sent SIGHUP!
+[2024-10-02 13:56:17 +0800] [70000] [ERROR] Worker (pid:70009) was sent SIGHUP!
+[2024-10-02 13:56:17 +0800] [70000] [ERROR] Worker (pid:70010) was sent SIGHUP!
+[2024-10-02 13:56:17 +0800] [70000] [ERROR] Worker (pid:70011) was sent SIGHUP!
+[2024-10-02 13:56:17 +0800] [70000] [ERROR] Worker (pid:70012) was sent SIGHUP!
+[2024-10-02 13:56:17 +0800] [70000] [ERROR] Worker (pid:70013) was sent SIGHUP!
+[2024-10-02 13:56:17 +0800] [70000] [ERROR] Worker (pid:70014) was sent SIGHUP!
+[2024-10-02 13:56:17 +0800] [70000] [ERROR] Worker (pid:70015) was sent SIGHUP!
+[2024-10-02 13:56:17 +0800] [70000] [ERROR] Worker (pid:70016) was sent SIGHUP!
+[2024-10-02 13:56:17 +0800] [70000] [ERROR] Worker (pid:70017) was sent SIGHUP!
+[2024-10-02 13:56:17 +0800] [70000] [ERROR] Worker (pid:70020) was sent SIGHUP!
+[2024-10-02 13:56:17 +0800] [70000] [ERROR] Worker (pid:70021) was sent SIGHUP!
+[2024-10-02 13:56:17 +0800] [70000] [ERROR] Worker (pid:70023) was sent SIGHUP!
+[2024-10-02 13:56:17 +0800] [70000] [ERROR] Worker (pid:70024) was sent SIGHUP!
+[2024-10-02 13:56:17 +0800] [70000] [ERROR] Worker (pid:70058) was sent SIGHUP!
+[2024-10-02 13:56:17 +0800] [70000] [ERROR] Worker (pid:70059) was sent SIGHUP!
+[2024-10-02 13:56:17 +0800] [70000] [ERROR] Worker (pid:70060) was sent SIGHUP!
+[2024-10-02 13:56:17 +0800] [70000] [ERROR] Worker (pid:70061) was sent SIGHUP!
+[2024-10-02 13:56:17 +0800] [70000] [ERROR] Worker (pid:70063) was sent SIGHUP!
+[2024-10-02 13:56:17 +0800] [70000] [ERROR] Worker (pid:70066) was sent SIGHUP!
+[2024-10-02 13:56:17 +0800] [70000] [ERROR] Worker (pid:70071) was sent SIGHUP!
+[2024-10-02 13:56:17 +0800] [70000] [ERROR] Worker (pid:70072) was sent SIGHUP!
+[2024-10-02 13:56:17 +0800] [70000] [ERROR] Worker (pid:70073) was sent SIGHUP!
+[2024-10-02 13:56:17 +0800] [70000] [ERROR] Worker (pid:70074) was sent SIGHUP!
+[2024-10-02 13:56:17 +0800] [70000] [ERROR] Worker (pid:70075) was sent SIGHUP!
+[2024-10-02 13:56:17 +0800] [70000] [ERROR] Worker (pid:70076) was sent SIGHUP!
+[2024-10-02 13:56:17 +0800] [70000] [ERROR] Worker (pid:70078) was sent SIGHUP!
+[2024-10-02 13:56:17 +0800] [70000] [ERROR] Worker (pid:70134) was sent SIGHUP!
+[2024-10-02 13:56:17 +0800] [70000] [ERROR] Worker (pid:70135) was sent SIGHUP!
+[2024-10-02 13:56:17 +0800] [70000] [ERROR] Worker (pid:70137) was sent SIGHUP!
+[2024-10-02 13:56:17 +0800] [70000] [ERROR] Worker (pid:70138) was sent SIGHUP!
+[2024-10-02 13:56:17 +0800] [70000] [ERROR] Worker (pid:70140) was sent SIGHUP!
+[2024-10-02 13:56:17 +0800] [70000] [ERROR] Worker (pid:70141) was sent SIGHUP!
+Traceback (most recent call last):
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/logging/__init__.py", line 1103, in emit
+    stream.write(msg + self.terminator)
+RuntimeError: reentrant call inside <_io.BufferedWriter name='<stderr>'>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/logging/__init__.py", line 1103, in emit
+    stream.write(msg + self.terminator)
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/arbiter.py", line 241, in handle_chld
+    self.reap_workers()
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/arbiter.py", line 553, in reap_workers
+    self.log.error(msg)
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/glogging.py", line 271, in error
+    self.error_log.error(msg, *args, **kwargs)
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/logging/__init__.py", line 1506, in error
+    self._log(ERROR, msg, args, **kwargs)
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/logging/__init__.py", line 1624, in _log
+    self.handle(record)
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/logging/__init__.py", line 1634, in handle
+    self.callHandlers(record)
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/logging/__init__.py", line 1696, in callHandlers
+    hdlr.handle(record)
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/logging/__init__.py", line 968, in handle
+    self.emit(record)
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/logging/__init__.py", line 1108, in emit
+    self.handleError(record)
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/logging/__init__.py", line 1021, in handleError
+    sys.stderr.write('--- Logging error ---\n')
+RuntimeError
+Call stack:
+  File "/home/whs/anaconda3/envs/ai-prof/bin/gunicorn", line 8, in <module>
+    sys.exit(run())
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 66, in run
+    WSGIApplication("%(prog)s [OPTIONS] [APP_MODULE]", prog=prog).run()
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/app/base.py", line 235, in run
+    super().run()
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/app/base.py", line 71, in run
+    Arbiter(self).run()
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/arbiter.py", line 223, in run
+    handler()
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/arbiter.py", line 252, in handle_hup
+    self.reload()
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/arbiter.py", line 450, in reload
+    self.app.reload()
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/app/base.py", line 60, in reload
+    self.do_load_config()
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/app/base.py", line 34, in do_load_config
+    self.load_default_config()
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/app/base.py", line 43, in load_default_config
+    self.cfg = Config(self.usage, prog=self.prog)
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/config.py", line 49, in __init__
+    self.settings = make_settings()
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/config.py", line 32, in make_settings
+    setting = s()
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/config.py", line 273, in __init__
+    def __init__(self):
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/arbiter.py", line 241, in handle_chld
+    self.reap_workers()
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/arbiter.py", line 558, in reap_workers
+    worker.tmp.close()
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/workers/workertmp.py", line 53, in close
+    return self._tmp.close()
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/arbiter.py", line 241, in handle_chld
+    self.reap_workers()
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/arbiter.py", line 553, in reap_workers
+    self.log.error(msg)
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/glogging.py", line 271, in error
+    self.error_log.error(msg, *args, **kwargs)
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/logging/__init__.py", line 1506, in error
+    self._log(ERROR, msg, args, **kwargs)
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/logging/__init__.py", line 1624, in _log
+    self.handle(record)
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/logging/__init__.py", line 1634, in handle
+    self.callHandlers(record)
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/logging/__init__.py", line 1701, in callHandlers
+    if (found == 0):
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/arbiter.py", line 241, in handle_chld
+    self.reap_workers()
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/arbiter.py", line 553, in reap_workers
+    self.log.error(msg)
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/glogging.py", line 271, in error
+    self.error_log.error(msg, *args, **kwargs)
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/logging/__init__.py", line 1506, in error
+    self._log(ERROR, msg, args, **kwargs)
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/logging/__init__.py", line 1624, in _log
+    self.handle(record)
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/logging/__init__.py", line 1634, in handle
+    self.callHandlers(record)
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/logging/__init__.py", line 1696, in callHandlers
+    hdlr.handle(record)
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/logging/__init__.py", line 968, in handle
+    self.emit(record)
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/logging/__init__.py", line 1100, in emit
+    msg = self.format(record)
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/logging/__init__.py", line 943, in format
+    return fmt.format(record)
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/logging/__init__.py", line 679, in format
+    if self.usesTime():
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/logging/__init__.py", line 647, in usesTime
+    return self._style.usesTime()
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/logging/__init__.py", line 423, in usesTime
+    def usesTime(self):
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/arbiter.py", line 241, in handle_chld
+    self.reap_workers()
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/arbiter.py", line 553, in reap_workers
+    self.log.error(msg)
+  File "/home/whs/anaconda3/envs/ai-prof/lib/python3.10/site-packages/gunicorn/glogging.py", line 271, in error
+    self.error_log.error(msg, *args, **kwargs)
+Message: 'Worker (pid:70067) was sent SIGHUP!'
+Arguments: ()
+[2024-10-02 13:56:17 +0800] [70000] [ERROR] Worker (pid:70132) was sent SIGHUP!
+[2024-10-02 13:56:17 +0800] [70334] [INFO] Booting worker with pid: 70334
+[2024-10-02 13:56:17 +0800] [70335] [INFO] Booting worker with pid: 70335
+[2024-10-02 13:56:17 +0800] [70336] [INFO] Booting worker with pid: 70336
+[2024-10-02 13:56:17 +0800] [70337] [INFO] Booting worker with pid: 70337
+[2024-10-02 13:56:17 +0800] [70338] [INFO] Booting worker with pid: 70338
+[2024-10-02 13:56:17 +0800] [70339] [INFO] Booting worker with pid: 70339
+[2024-10-02 13:56:17 +0800] [70340] [INFO] Booting worker with pid: 70340
+[2024-10-02 13:56:17 +0800] [70341] [INFO] Booting worker with pid: 70341
+[2024-10-02 13:56:17 +0800] [70342] [INFO] Booting worker with pid: 70342
+[2024-10-02 13:56:17 +0800] [70343] [INFO] Booting worker with pid: 70343
+[2024-10-02 13:56:17 +0800] [70344] [INFO] Booting worker with pid: 70344
+[2024-10-02 13:56:17 +0800] [70345] [INFO] Booting worker with pid: 70345
+[2024-10-02 13:56:17 +0800] [70346] [INFO] Booting worker with pid: 70346
+[2024-10-02 13:56:17 +0800] [70347] [INFO] Booting worker with pid: 70347
+[2024-10-02 13:56:17 +0800] [70348] [INFO] Booting worker with pid: 70348
+[2024-10-02 13:56:17 +0800] [70349] [INFO] Booting worker with pid: 70349
+[2024-10-02 13:56:17 +0800] [70350] [INFO] Booting worker with pid: 70350
+[2024-10-02 13:56:17 +0800] [70351] [INFO] Booting worker with pid: 70351
+[2024-10-02 13:56:17 +0800] [70352] [INFO] Booting worker with pid: 70352
+[2024-10-02 13:56:17 +0800] [70353] [INFO] Booting worker with pid: 70353
+[2024-10-02 13:56:17 +0800] [70354] [INFO] Booting worker with pid: 70354
+[2024-10-02 13:56:17 +0800] [70355] [INFO] Booting worker with pid: 70355
+[2024-10-02 13:56:17 +0800] [70356] [INFO] Booting worker with pid: 70356
+[2024-10-02 13:56:17 +0800] [70357] [INFO] Booting worker with pid: 70357
+[2024-10-02 13:56:17 +0800] [70358] [INFO] Booting worker with pid: 70358
+[2024-10-02 13:56:17 +0800] [70359] [INFO] Booting worker with pid: 70359
+[2024-10-02 13:56:17 +0800] [70360] [INFO] Booting worker with pid: 70360
+[2024-10-02 13:56:17 +0800] [70361] [INFO] Booting worker with pid: 70361
+[2024-10-02 13:56:17 +0800] [70362] [INFO] Booting worker with pid: 70362
+[2024-10-02 13:56:17 +0800] [70363] [INFO] Booting worker with pid: 70363
+[2024-10-02 13:56:17 +0800] [70364] [INFO] Booting worker with pid: 70364
+[2024-10-02 13:56:17 +0800] [70365] [INFO] Booting worker with pid: 70365
+[2024-10-02 13:56:17 +0800] [70366] [INFO] Booting worker with pid: 70366
+[2024-10-02 13:56:17 +0800] [70367] [INFO] Booting worker with pid: 70367
+[2024-10-02 13:56:17 +0800] [70368] [INFO] Booting worker with pid: 70368
+[2024-10-02 13:56:17 +0800] [70369] [INFO] Booting worker with pid: 70369
+[2024-10-02 13:56:17 +0800] [70370] [INFO] Booting worker with pid: 70370
+[2024-10-02 13:56:17 +0800] [70371] [INFO] Booting worker with pid: 70371
+[2024-10-02 13:56:17 +0800] [70372] [INFO] Booting worker with pid: 70372
+[2024-10-02 13:56:17 +0800] [70373] [INFO] Booting worker with pid: 70373
+[2024-10-02 13:56:17 +0800] [70376] [INFO] Booting worker with pid: 70376
+[2024-10-02 13:56:17 +0800] [70374] [INFO] Booting worker with pid: 70374
+[2024-10-02 13:56:17 +0800] [70375] [INFO] Booting worker with pid: 70375
+[2024-10-02 13:56:17 +0800] [70378] [INFO] Booting worker with pid: 70378
+[2024-10-02 13:56:17 +0800] [70377] [INFO] Booting worker with pid: 70377
+[2024-10-02 13:56:17 +0800] [70379] [INFO] Booting worker with pid: 70379
+[2024-10-02 13:56:17 +0800] [70380] [INFO] Booting worker with pid: 70380
+[2024-10-02 13:56:17 +0800] [70381] [INFO] Booting worker with pid: 70381
+[2024-10-02 13:56:17 +0800] [70382] [INFO] Booting worker with pid: 70382
+[2024-10-02 13:56:17 +0800] [70384] [INFO] Booting worker with pid: 70384
+[2024-10-02 13:56:17 +0800] [70383] [INFO] Booting worker with pid: 70383
+[2024-10-02 13:56:17 +0800] [70385] [INFO] Booting worker with pid: 70385
+[2024-10-02 13:56:17 +0800] [70387] [INFO] Booting worker with pid: 70387
+[2024-10-02 13:56:17 +0800] [70386] [INFO] Booting worker with pid: 70386
+[2024-10-02 13:56:17 +0800] [70388] [INFO] Booting worker with pid: 70388
+[2024-10-02 13:56:17 +0800] [70389] [INFO] Booting worker with pid: 70389
