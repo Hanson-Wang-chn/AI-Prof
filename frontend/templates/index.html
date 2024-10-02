@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI-Professor for Linear Algebra</title>
-    <script src="https://polyfill-fastly.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <link rel="stylesheet" href="{{ url_for('static', filename='local_libs/bootstrap.min.css') }}">
+    <script src="https://polyfill-fastly.io/v3/polyfill.min.js?features=es6" onerror="showError('polyfill.min.js not found!')"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" onerror="showError('MathJax script not found!')"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='local_libs/bootstrap.min.css') }}" onerror="showError('bootstrap.min.css not found!')">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -14,7 +14,7 @@
             padding: 20px;
         }
         .container {
-            max-width: 900px;
+            max-width: 1200px;
             margin: 50px auto;
             background: rgba(255, 255, 255, 0.9);
             padding: 30px;
@@ -39,7 +39,7 @@
             word-wrap: break-word;
         }
         .question {
-            background-color: #e1f5fe;
+            background-color: #94e8ac;
             align-self: flex-end;
             text-align: right;
             margin-right: 20px;
@@ -78,12 +78,19 @@
 </div>
 
 <script>
-    function createBubble(content, type) {
-        var bubble = document.createElement('div');
-        bubble.className = 'chat-bubble ' + type;
-        bubble.innerHTML = content;  // 直接赋值内容，不使用 marked.js
-        return bubble;
+    function showError(message) {
+        alert(message); // 显示警告框
     }
+
+    function createBubble(content, type) {
+    // 将 \n 替换为 <br> 标签
+    var formattedContent = content.replace(/\n/g, '<br>');
+    var bubble = document.createElement('div');
+    bubble.className = 'chat-bubble ' + type;
+    // 使用 innerHTML 而不是 innerText 或 textContent 来允许 HTML 标签渲染
+    bubble.innerHTML = formattedContent;  // 现在支持 <br> 换行
+    return bubble;
+}
 
     function askQuestion() {
         var query = document.getElementById("query").value;

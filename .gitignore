@@ -16,3 +16,4 @@ model-00015-of-00017.safetensors
 model-00016-of-00017.safetensors
 model-00017-of-00017.safetensors
 nohup.out
+__pycache__/
