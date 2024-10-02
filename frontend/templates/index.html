@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI-Professor for Linear Algebra</title>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://polyfill-fastly.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="stylesheet" href="{{ url_for('static', filename='local_libs/bootstrap.min.css') }}">
     <style>
@@ -72,7 +72,7 @@
     <h1>AI-Prof</h1>
     <div id="chat-box" class="d-flex flex-column chat-box"></div>
     <div class="form-group d-flex">
-        <input type="text" class="form-control mr-2" id="query" placeholder="输入你的问题" onkeydown="handleKeyDown(event)">
+        <input type="text" class="form-control mr-2" id="query" placeholder="请详细描述问题——" onkeydown="handleKeyDown(event)">
         <button class="btn btn-primary" onclick="askQuestion()">提问</button>
     </div>
 </div>

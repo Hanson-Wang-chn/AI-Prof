@@ -592,3 +592,78 @@ Arguments: ()
 [2024-10-02 13:56:17 +0800] [70386] [INFO] Booting worker with pid: 70386
 [2024-10-02 13:56:17 +0800] [70388] [INFO] Booting worker with pid: 70388
 [2024-10-02 13:56:17 +0800] [70389] [INFO] Booting worker with pid: 70389
+[2024-10-02 14:47:16 +0800] [70338] [INFO] Worker exiting (pid: 70338)
+[2024-10-02 14:47:16 +0800] [70341] [INFO] Worker exiting (pid: 70341)
+[2024-10-02 14:47:16 +0800] [70340] [INFO] Worker exiting (pid: 70340)
+[2024-10-02 14:47:16 +0800] [70346] [INFO] Worker exiting (pid: 70346)
+[2024-10-02 14:47:16 +0800] [70347] [INFO] Worker exiting (pid: 70347)
+[2024-10-02 14:47:16 +0800] [70337] [INFO] Worker exiting (pid: 70337)
+[2024-10-02 14:47:16 +0800] [70339] [INFO] Worker exiting (pid: 70339)
+[2024-10-02 14:47:16 +0800] [70336] [INFO] Worker exiting (pid: 70336)
+[2024-10-02 14:47:16 +0800] [70334] [INFO] Worker exiting (pid: 70334)
+[2024-10-02 14:47:16 +0800] [70335] [INFO] Worker exiting (pid: 70335)
+[2024-10-02 14:47:16 +0800] [70342] [INFO] Worker exiting (pid: 70342)
+[2024-10-02 14:47:16 +0800] [70348] [INFO] Worker exiting (pid: 70348)
+[2024-10-02 14:47:16 +0800] [70345] [INFO] Worker exiting (pid: 70345)
+[2024-10-02 14:47:16 +0800] [70344] [INFO] Worker exiting (pid: 70344)
+[2024-10-02 14:47:16 +0800] [70349] [INFO] Worker exiting (pid: 70349)
+[2024-10-02 14:47:16 +0800] [70358] [INFO] Worker exiting (pid: 70358)
+[2024-10-02 14:47:16 +0800] [70350] [INFO] Worker exiting (pid: 70350)
+[2024-10-02 14:47:16 +0800] [70354] [INFO] Worker exiting (pid: 70354)
+[2024-10-02 14:47:16 +0800] [70343] [INFO] Worker exiting (pid: 70343)
+[2024-10-02 14:47:16 +0800] [70360] [INFO] Worker exiting (pid: 70360)
+[2024-10-02 14:47:16 +0800] [70353] [INFO] Worker exiting (pid: 70353)
+[2024-10-02 14:47:16 +0800] [70352] [INFO] Worker exiting (pid: 70352)
+[2024-10-02 14:47:16 +0800] [70357] [INFO] Worker exiting (pid: 70357)
+[2024-10-02 14:47:16 +0800] [70355] [INFO] Worker exiting (pid: 70355)
+[2024-10-02 14:47:16 +0800] [70351] [INFO] Worker exiting (pid: 70351)
+[2024-10-02 14:47:16 +0800] [70368] [INFO] Worker exiting (pid: 70368)
+[2024-10-02 14:47:16 +0800] [70000] [INFO] Handling signal: term
+[2024-10-02 14:47:16 +0800] [70359] [INFO] Worker exiting (pid: 70359)
+[2024-10-02 14:47:16 +0800] [70372] [INFO] Worker exiting (pid: 70372)
+[2024-10-02 14:47:16 +0800] [70369] [INFO] Worker exiting (pid: 70369)
+[2024-10-02 14:47:16 +0800] [70356] [INFO] Worker exiting (pid: 70356)
+[2024-10-02 14:47:16 +0800] [70365] [INFO] Worker exiting (pid: 70365)
+[2024-10-02 14:47:16 +0800] [70381] [INFO] Worker exiting (pid: 70381)
+[2024-10-02 14:47:16 +0800] [70380] [INFO] Worker exiting (pid: 70380)
+[2024-10-02 14:47:16 +0800] [70373] [INFO] Worker exiting (pid: 70373)
+[2024-10-02 14:47:16 +0800] [70378] [INFO] Worker exiting (pid: 70378)
+[2024-10-02 14:47:16 +0800] [70366] [INFO] Worker exiting (pid: 70366)
+[2024-10-02 14:47:16 +0800] [70388] [INFO] Worker exiting (pid: 70388)
+[2024-10-02 14:47:16 +0800] [70363] [INFO] Worker exiting (pid: 70363)
+[2024-10-02 14:47:16 +0800] [70371] [INFO] Worker exiting (pid: 70371)
+[2024-10-02 14:47:16 +0800] [70375] [INFO] Worker exiting (pid: 70375)
+[2024-10-02 14:47:16 +0800] [70389] [INFO] Worker exiting (pid: 70389)
+[2024-10-02 14:47:16 +0800] [70362] [INFO] Worker exiting (pid: 70362)
+[2024-10-02 14:47:16 +0800] [70379] [INFO] Worker exiting (pid: 70379)
+[2024-10-02 14:47:16 +0800] [70374] [INFO] Worker exiting (pid: 70374)
+[2024-10-02 14:47:16 +0800] [70384] [INFO] Worker exiting (pid: 70384)
+[2024-10-02 14:47:16 +0800] [70376] [INFO] Worker exiting (pid: 70376)
+[2024-10-02 14:47:16 +0800] [70383] [INFO] Worker exiting (pid: 70383)
+[2024-10-02 14:47:16 +0800] [70364] [INFO] Worker exiting (pid: 70364)
+[2024-10-02 14:47:16 +0800] [70361] [INFO] Worker exiting (pid: 70361)
+[2024-10-02 14:47:16 +0800] [70370] [INFO] Worker exiting (pid: 70370)
+[2024-10-02 14:47:16 +0800] [70377] [INFO] Worker exiting (pid: 70377)
+[2024-10-02 14:47:16 +0800] [70382] [INFO] Worker exiting (pid: 70382)
+[2024-10-02 14:47:16 +0800] [70000] [ERROR] Worker (pid:70335) was sent SIGTERM!
+[2024-10-02 14:47:16 +0800] [70000] [ERROR] Worker (pid:70337) was sent SIGTERM!
+[2024-10-02 14:47:16 +0800] [70000] [ERROR] Worker (pid:70341) was sent SIGTERM!
+[2024-10-02 14:47:16 +0800] [70000] [ERROR] Worker (pid:70354) was sent SIGTERM!
+[2024-10-02 14:47:16 +0800] [70000] [ERROR] Worker (pid:70358) was sent SIGTERM!
+[2024-10-02 14:47:16 +0800] [70000] [ERROR] Worker (pid:70360) was sent SIGTERM!
+[2024-10-02 14:47:16 +0800] [70387] [INFO] Worker exiting (pid: 70387)
+[2024-10-02 14:47:16 +0800] [70000] [ERROR] Worker (pid:70334) was sent SIGTERM!
+[2024-10-02 14:47:16 +0800] [70386] [INFO] Worker exiting (pid: 70386)
+[2024-10-02 14:47:16 +0800] [70367] [INFO] Worker exiting (pid: 70367)
+[2024-10-02 14:47:16 +0800] [70385] [INFO] Worker exiting (pid: 70385)
+[2024-10-02 14:47:16 +0800] [70000] [ERROR] Worker (pid:70336) was sent SIGTERM!
+[2024-10-02 14:47:16 +0800] [70000] [ERROR] Worker (pid:70338) was sent SIGTERM!
+[2024-10-02 14:47:16 +0800] [70000] [ERROR] Worker (pid:70339) was sent SIGTERM!
+[2024-10-02 14:47:16 +0800] [70000] [ERROR] Worker (pid:70345) was sent SIGTERM!
+[2024-10-02 14:47:16 +0800] [70000] [ERROR] Worker (pid:70347) was sent SIGTERM!
+[2024-10-02 14:47:16 +0800] [70000] [ERROR] Worker (pid:70348) was sent SIGTERM!
+[2024-10-02 14:47:16 +0800] [70000] [ERROR] Worker (pid:70349) was sent SIGTERM!
+[2024-10-02 14:47:16 +0800] [70000] [ERROR] Worker (pid:70350) was sent SIGTERM!
+[2024-10-02 14:47:16 +0800] [70000] [ERROR] Worker (pid:70353) was sent SIGTERM!
+[2024-10-02 14:47:16 +0800] [70000] [ERROR] Worker (pid:70340) was sent SIGTERM!
+[2024-10-02 14:47:16 +0800] [70000] [INFO] Shutting down: Master
