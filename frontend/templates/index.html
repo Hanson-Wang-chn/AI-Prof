@@ -52,6 +52,13 @@
             margin-left: 20px;
             color: #333;
         }
+        .generating {
+            background-color: #F5D6E3;
+            align-self: flex-start;
+            text-align: left;
+            margin-left: 20px;
+            color: #333;
+        }
         .form-group.d-flex {
             align-items: center;
         }
@@ -83,14 +90,12 @@
     }
 
     function createBubble(content, type) {
-    // 将 \n 替换为 <br> 标签
-    var formattedContent = content.replace(/\n/g, '<br>');
-    var bubble = document.createElement('div');
-    bubble.className = 'chat-bubble ' + type;
-    // 使用 innerHTML 而不是 innerText 或 textContent 来允许 HTML 标签渲染
-    bubble.innerHTML = formattedContent;  // 现在支持 <br> 换行
-    return bubble;
-}
+        var formattedContent = content.replace(/\n/g, '<br>');
+        var bubble = document.createElement('div');
+        bubble.className = 'chat-bubble ' + type;
+        bubble.innerHTML = formattedContent;  // 现在支持 <br> 换行
+        return bubble;
+    }
 
     function askQuestion() {
         var query = document.getElementById("query").value;
@@ -103,6 +108,11 @@
 
         // 清空输入框
         document.getElementById("query").value = "";
+
+        // 添加生成中提示气泡
+        var generatingBubble = createBubble('Generating...', 'generating');
+        chatBox.appendChild(generatingBubble);
+        chatBox.scrollTop = chatBox.scrollHeight;
 
         // 发送请求
         fetch('http://49.52.18.227:5002/ask', {
@@ -119,6 +129,9 @@
             return response.json();
         })
         .then(data => {
+            // 移除生成中提示气泡
+            chatBox.removeChild(chatBox.lastChild);
+            
             // 添加回答气泡
             var answerBubble = createBubble(data.answer, 'answer');
             chatBox.appendChild(answerBubble);
@@ -128,6 +141,9 @@
             MathJax.typeset();
         })
         .catch(error => {
+            // 移除生成中提示气泡
+            chatBox.removeChild(chatBox.lastChild);
+            
             var errorBubble = createBubble('出现错误，请稍后再试。', 'answer');
             chatBox.appendChild(errorBubble);
             console.error('There was a problem with the fetch operation:', error);
