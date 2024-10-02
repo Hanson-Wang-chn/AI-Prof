@@ -79,7 +79,7 @@ def msg_generate(prompt):
     # 生成回复的token ID
     generated_ids = model.generate(
         **model_inputs,
-        max_new_tokens=2048,
+        max_new_tokens=768,
         do_sample=True,                      # 启用采样以获得更具多样性的输出
         temperature=0.7,                     # 采样温度，控制生成文本的随机性
         top_p=0.95                           # 核采样，保留概率累积到top_p的token
