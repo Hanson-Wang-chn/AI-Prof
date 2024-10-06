@@ -445,7 +445,7 @@
 - `POST http://example.com:5001/api/model/rag/library`
 
 **Description:**
-- This endpoint is used for making quiz.
+- This endpoint is used for user's doubts around questions in the library.
 
 **Request:**
 
