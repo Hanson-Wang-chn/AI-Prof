@@ -332,7 +332,7 @@
 ### 2. Chat with RAG Database
 
 **Endpoint:**
-- `POST http://example.com:5001/api/model/rag/chat`
+- `POST http://example.com:5004/api/model/rag/chat`
 
 **Description:**
 - This endpoint is used for basic chat with RAG database.
@@ -358,7 +358,7 @@
 ### 3. TF Questions
 
 **Endpoint:**
-- `POST http://example.com:5001/api/model/rag/tf`
+- `POST http://example.com:5004/api/model/rag/tf`
 
 **Description:**
 - This endpoint is used for generating TF questions.
@@ -386,7 +386,7 @@
 ### 4. Probing
 
 **Endpoint:**
-- `POST http://example.com:5001/api/model/rag/probe`
+- `POST http://example.com:5004/api/model/rag/probe`
 
 **Description:**
 - This endpoint is used for generating sequential questions.
@@ -414,7 +414,7 @@
 ### 5. Quiz
 
 **Endpoint:**
-- `POST http://example.com:5001/api/model/rag/quiz`
+- `POST http://example.com:5004/api/model/rag/quiz`
 
 **Description:**
 - This endpoint is used for making quiz.
@@ -442,7 +442,7 @@
 ### 6. Query Library
 
 **Endpoint:**
-- `POST http://example.com:5001/api/model/rag/library`
+- `POST http://example.com:5004/api/model/rag/library`
 
 **Description:**
 - This endpoint is used for user's doubts around questions in the library.
