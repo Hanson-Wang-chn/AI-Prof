@@ -305,7 +305,7 @@
 ### 1. Basic Chat
 
 **Endpoint:**
-- `POST http://example.com:5000/api/model/generate`
+- `POST http://example.com:5000/generate`
 
 **Description:**
 - This endpoint is used for basic chat with the LLM.
