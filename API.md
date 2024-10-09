@@ -24,8 +24,10 @@
 
 ```json
 {
-    "message": "'successful' or 'failed'",
+    //"message": "'successful' or 'failed'",
     // 'successful' stands for the email account is available, while 'failed' means the account has been used.
+    "message":"result numbers",
+    //result numbers:'1000' stands for successful,'1001'stands for the account has been used,'1002'stands for request too frequent
     "user_id": "f5669feb-0065-466e-b51c-8bbbeab4c801" // a random UUID
 }
 ```
@@ -222,13 +224,13 @@
     "history": [
         {
             "conversation_id": "uuid1",
-            "conversation_name": "A",
-            "created_at": "2024-10-06"
+            "conversation_name": "A",//待定
+            "created_at": "create_time"//like 2024-10-06, database will generate it automatically
         },
         {
             "conversation_id": "uuid2",
             "conversation_name": "B",
-            "created_at": "2024-10-05"
+            "created_at": "create_time"
         }
         // ...
     ]
