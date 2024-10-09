@@ -17,3 +17,5 @@ model-00016-of-00017.safetensors
 model-00017-of-00017.safetensors
 nohup.out
 __pycache__/
+model.safetensors
+pytorch_model.bin

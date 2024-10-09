@@ -6,35 +6,39 @@ import json
 from flask import Flask, request, jsonify
 import requests
 import os
+# from utility.summarizer import TextSummarizer
+
+
+# # 导入Summarizer
+# summarizer = TextSummarizer()
+
 
 # 设置国内镜像
 os.environ['HF_ENDPOINT'] = 'https://hf-mirror.com'
 
 
+# 定义服务
 app = Flask(__name__)
 
 
 # ----------class RAG----------
 class RAG:
-    def __init__(self, database_path:str = "database_linear_algebra.json"):
+    def __init__(self, database_path:str = "/home/whs/ai-prof/LLM/database_linear_algebra.json"):
         with open(database_path) as f:
             db = json.load(f)
         self.dict = {item['question']: item.get('output', '') for item in db}
         loader = JSONLoader(database_path, jq_schema='.[].question')
         documents = loader.load()
 
-        # word2vec
-        model_name = "moka-ai/m3e-base"
-        model_kwargs = {'device': 'cpu'}
-        encode_kwargs = {'normalize_embeddings': True}
+        # 使用本地模型进行word2vec处理
+        local_model_path = "/home/whs/ai-prof/LLM/m3e-base"
         embedding = HuggingFaceBgeEmbeddings(
-            model_name=model_name,
-            model_kwargs=model_kwargs,
-            encode_kwargs=encode_kwargs,
+            model_name=local_model_path,
+            model_kwargs={'device': 'cpu'},
+            encode_kwargs={'normalize_embeddings': True},
             query_instruction="为文本生成向量表示用于文本检索"
         )
         self.db = Chroma.from_documents(documents, embedding)
-
 
     def get_rag_database_linear_algebra(self, user_question:str):
         """
@@ -55,6 +59,9 @@ class RAG:
         else:
             reference += f"参考提问：\n{knowledge[0].page_content}\n\n"
             reference += f"参考回答：\n{self.dict[knowledge[0].page_content]}\n\n"
+        
+        # max_tokens = 1024
+        # reference = summarizer.summarize(reference, max_tokens)
         
         prompt = (
             f"我将向你提问，你回答的规则是：若参考信息不为空且存在和我的问题相关的有效信息，"
