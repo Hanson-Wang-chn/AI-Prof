@@ -75,7 +75,7 @@ class TextSummarizer:
         参数:
         - model_path (str): 本地模型的路径
         """
-        model_path = "/home/whs/ai-prof/utility/bart-base-chinese"
+        model_path = "/home/whs/ai-prof/LLM/bart-base-chinese"
         self.tokenizer = AutoTokenizer.from_pretrained(model_path)
         self.model = AutoModelForSeq2SeqLM.from_pretrained(model_path)
 
@@ -110,11 +110,4 @@ class TextSummarizer:
         summary = self.tokenizer.decode(summary_ids[0], skip_special_tokens=True)
 
         return summary
-
-
-summarizer = TextSummarizer()
-text = "今天万里无云，晴空万里，艳阳高照，风和景明。"
-max_tokens = 50
-summary = summarizer.summarize(text, max_tokens)
-print("生成的摘要：", summary)
 

@@ -6,15 +6,7 @@ import json
 from flask import Flask, request, jsonify
 import requests
 import os
-# from utility.summarizer import TextSummarizer
-
-
-# # 导入Summarizer
-# summarizer = TextSummarizer()
-
-
-# 设置国内镜像
-os.environ['HF_ENDPOINT'] = 'https://hf-mirror.com'
+from summarizer import TextSummarizer
 
 
 # 定义服务
@@ -39,6 +31,11 @@ class RAG:
             query_instruction="为文本生成向量表示用于文本检索"
         )
         self.db = Chroma.from_documents(documents, embedding)
+        
+        # 限制最大token数
+        self.summarizer = TextSummarizer()
+        self.max_tokens_reference = 1024
+        self.max_tokens_history = 1024
 
     def get_rag_database_linear_algebra(self, user_question:str):
         """
@@ -60,8 +57,7 @@ class RAG:
             reference += f"参考提问：\n{knowledge[0].page_content}\n\n"
             reference += f"参考回答：\n{self.dict[knowledge[0].page_content]}\n\n"
         
-        # max_tokens = 1024
-        # reference = summarizer.summarize(reference, max_tokens)
+        reference = self.summarizer.summarize(reference, self.max_tokens_reference)
         
         prompt = (
             f"我将向你提问，你回答的规则是：若参考信息不为空且存在和我的问题相关的有效信息，"
@@ -89,6 +85,8 @@ class RAG:
             reference += f"参考提问：\n{knowledge[0].page_content}\n\n"
             reference += f"参考回答：\n{self.dict[knowledge[0].page_content]}\n\n"
         
+        reference = self.summarizer.summarize(reference, self.max_tokens_reference)
+        
         if history == '':
             prompt = (
                 f"请围绕“核心知识点”，结合“参考信息”，生成与“例子”类似的{number}道判断题。\n"
@@ -98,6 +96,7 @@ class RAG:
             )
         
         else:
+            history = self.summarizer.summarize(history, self.max_tokens_history)
             prompt = (
                 f"请结合“参考信息”，评析“用户回复”，尤其是内容的正确性。\n"
                 f"参考信息：\n{reference}\n"
@@ -120,6 +119,11 @@ class RAG:
             reference += f"参考提问：\n{knowledge[0].page_content}\n\n"
             reference += f"参考回答：\n{self.dict[knowledge[0].page_content]}\n\n"
         
+        reference = self.summarizer.summarize(reference, self.max_tokens_reference)
+        
+        if history != "":
+            history = self.summarizer.summarize(history, self.max_tokens_history)
+        
         prompt = (
             f"请结合“历史记录”和“参考信息”，不断追问学生与“核心知识点”相关的问题，帮助学生检测学习成果，解决“学生的需求”。\n"
             f"学生的需求：\n{user_demand}\n"
@@ -140,8 +144,11 @@ class RAG:
         if not knowledge:
             reference += "没有找到相关信息。"
         
-        reference += f"参考提问：\n{knowledge[0].page_content}\n\n"
-        reference += f"参考回答：\n{self.dict[knowledge[0].page_content]}\n\n"
+        else:
+            reference += f"参考提问：\n{knowledge[0].page_content}\n\n"
+            reference += f"参考回答：\n{self.dict[knowledge[0].page_content]}\n\n"
+        
+        reference = self.summarizer.summarize(reference, self.max_tokens_reference)
         
         prompt = (
             f"请围绕“核心知识点”，结合“参考信息”，出一份试卷，题型和“例题”相似。"
@@ -168,6 +175,11 @@ class RAG:
         else:
             reference += f"参考提问：\n{knowledge[0].page_content}\n\n"
             reference += f"参考回答：\n{self.dict[knowledge[0].page_content]}\n\n"
+        
+        reference = self.summarizer.summarize(reference, self.max_tokens_reference)
+        
+        if history != "":
+            history = self.summarizer.summarize(history, self.max_tokens_history)
             
         prompt = (
             f"核心知识点：\n{knowledge_point}\n"
