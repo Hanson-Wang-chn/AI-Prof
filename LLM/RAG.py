@@ -5,7 +5,6 @@ import torch
 import json
 from flask import Flask, request, jsonify
 import requests
-import os
 from summarizer import TextSummarizer
 
 

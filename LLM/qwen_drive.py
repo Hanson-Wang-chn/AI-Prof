@@ -5,7 +5,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
 app = Flask(__name__)  # 创建 Flask 应用实例
 
 # 模型名称
-model_name = "/home/whs/ai-prof/LLM" # Qwen2-32B-Instruct
+model_name = "/home/whs/ai-prof/LLM/Qwen2.5-32B-Instruct" # Qwen2-32B-Instruct
 
 # 配置BitsAndBytes进行4位量化
 bnb_config = BitsAndBytesConfig(
