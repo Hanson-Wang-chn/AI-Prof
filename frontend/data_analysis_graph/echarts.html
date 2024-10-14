@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户使用频率分析</title>
+    <style>
+        /* 使用flexbox布局，使图表左右排列 */
+        .container {
+            display: flex; /* 将子元素设置为左右排列 */
+            justify-content: space-between; /* 保持两侧留有空间 */
+            align-items: flex-start; /* 让内容从上到下对齐 */
+            background-color: beige;
+        }
+        /* 定义两个图表的宽高 */
+         #frequency {
+             width: 600px;
+            height: 600px;
+        }
+        #kind {
+             width: 600px;
+            height: 600px;
+        }
+        
+    </style>
+</head>
+<body>
+    
+    <!-- 引入ECharts库 -->
+    <script src="echart.js"></script>
+    <div class="container">
+    <!-- 使用次数分析图表 -->
+        <div id="frequency">
+            <script>
+                // 获取ID为frequency的div作为图表容器
+                var chardom1 = document.getElementById('frequency');
+                // 初始化ECharts实例
+                var mychart1 = echarts.init(chardom1);
+                var option1;
+                // 配置图表的选项
+                option1 = {
+                     // 设置标题
+                     title: {
+                        text: '学科占比',   // 标题文本
+                        
+                        left: 'center'      // 标题位置居中
+                    },
+                     // 提示框的配置，当鼠标悬停时触发
+                     tooltip: {
+                        trigger: 'axis'     // 触发类型为数据项
+                    },
+                    // X轴配置为类别型，显示周一至周日
+                    xAxis: {
+                        type: 'category',
+                        data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
+                    },
+                    // Y轴配置为数值型
+                    yAxis: {
+                        type: 'value'
+                    },
+                    // 定义图表的数据和样式，平滑线图
+                    series: [
+                        {
+                            data: [820, 932, 901, 934, 1290, 1330, 1320],
+                            type: 'line',   // 图表类型为折线图
+                            smooth: true    // 启用平滑曲线
+                        }
+                    ]
+                };
+                // 将配置项设置到图表实例中
+                option1 && mychart1.setOption(option1);
+            </script>
+        </div>
+        
+        <!-- 学科占比分析图表 -->
+        <div id="kind">
+            <script>
+                // 获取ID为kind的div作为图表容器
+                var chardom2 = document.getElementById('kind');
+                // 初始化ECharts实例
+                var mychart2 = echarts.init(chardom2);
+                var option2;
+                // 配置图表的选项
+                option2 = {
+                    // 设置标题
+                    title: {
+                        text: '学科占比',   // 标题文本
+                        
+                        left: 'center'      // 标题位置居中
+                    },
+                    // 提示框的配置，当鼠标悬停时触发
+                    tooltip: {
+                        trigger: 'item'     // 触发类型为数据项
+                    },
+                    // 图例配置，垂直排列在左侧
+                    legend: {
+                        orient: 'vertical', // 垂直布局
+                        left: 'left'        // 靠左对齐
+                    },
+                    // 配置饼图数据及样式
+                    series: [
+                        {
+                            name: '提问数量',    // 数据系列的名称
+                            type: 'pie',        // 图表类型为饼图
+                            radius: '50%',      // 饼图的半径
+                            data: [
+                                { value: 1048, name: '线性代数' },
+                                { value: 735, name: '高等数学' },
+                                { value: 580, name: '大学物理' },
+                                { value: 484, name: '概率论与数理统计' },
+                                { value: 300, name: '计算机系统' }
+                            ],
+                            // 设置强调样式，当鼠标悬停在数据项上时的效果
+                            emphasis: {
+                                itemStyle: {
+                                    shadowBlur: 10,               // 阴影的模糊程度
+                                    shadowOffsetX: 0,             // 阴影X偏移量
+                                    shadowColor: 'rgba(0, 0, 0, 0.5)' // 阴影颜色
+                                }
+                            }
+                        }
+                    ]
+                };
+                // 将配置项设置到图表实例中
+                option2 && mychart2.setOption(option2);
+            </script>
+        </div>
+    </div>
+</body>
+</html>
