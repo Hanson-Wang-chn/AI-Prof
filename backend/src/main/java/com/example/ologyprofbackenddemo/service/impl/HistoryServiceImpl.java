@@ -10,7 +10,7 @@ import com.example.ologyprofbackenddemo.service.HistoryService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import jakarta.annotation.Resource;
+import javax.annotation.Resource;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +23,7 @@ public class HistoryServiceImpl implements HistoryService {
 
     @Override
     @Transactional
-    public ConversationVO insertCoversation(String userId,int groupId, String text, int type){
+    public ConversationVO insertConversation(String userId,int groupId, String text, int type){
         //异常处理
         if (userId == null) throw new OpException(OpExceptionEnum.ILLEGAL_ARGUMENT);
 
@@ -38,8 +38,7 @@ public class HistoryServiceImpl implements HistoryService {
         historyRepository.save(history);
 
         //返回前端
-        ConversationVO conversationVO = new ConversationVO(history);
-        return conversationVO;
+        return new ConversationVO(history);
     }
 
     @Override

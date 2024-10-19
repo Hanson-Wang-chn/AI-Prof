@@ -2,15 +2,12 @@ package com.example.ologyprofbackenddemo.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.example.ologyprofbackenddemo.common.enums.OpExceptionEnum;
-import com.example.ologyprofbackenddemo.common.enums.ResponseCodeEnum;
 import com.example.ologyprofbackenddemo.common.exception.OpException;
-import com.example.ologyprofbackenddemo.model.DO.HistoryDO;
 import com.example.ologyprofbackenddemo.model.DO.StudentDO;
 import com.example.ologyprofbackenddemo.model.VO.UserInfoVO;
-import com.example.ologyprofbackenddemo.repository.IStudentRepo;
 import com.example.ologyprofbackenddemo.repository.impl.StudentRepository;
 import com.example.ologyprofbackenddemo.service.UserService;
-import jakarta.annotation.Resource;
+import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -24,7 +21,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional
-    public ResponseCodeEnum createStudent(String userName, int classNum, String email, String password){
+    public Void createStudent(String userName, int classNum, String email, String password){
         //检测学生名是否存在
         LambdaQueryWrapper<StudentDO> queryWrapper1 = new LambdaQueryWrapper<>();
         queryWrapper1.eq(StudentDO::getUserName, userName);
@@ -59,7 +56,7 @@ public class UserServiceImpl implements UserService {
         studentRepository.save(newStudent);
 
         //返回枚举代码
-        return ResponseCodeEnum.SUCCESS;
+        return null;
 
     }
 
@@ -81,9 +78,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void updateStuPwd(String userId,String newPassword){
+    public Void updateStuPwd(String userId,String newPassword){
         //判断是否传了id
-        if(userId == null) throw  new OpException(OpExceptionEnum.USER_ID_EMPTY);
+        if(userId == null) {
+            throw  new OpException(OpExceptionEnum.USER_ID_EMPTY);
+        }
         //判断学生是否存在
         StudentDO existingStudent = studentRepository.getById(userId);
         if(existingStudent == null){
@@ -93,5 +92,6 @@ public class UserServiceImpl implements UserService {
         existingStudent.setPassword(newPassword);
         //根据id修改数据库内容
         studentRepository.updateById(existingStudent);
+        return null;
     }
 }

@@ -2,21 +2,17 @@ package com.example.ologyprofbackenddemo.service.impl;
 
 import com.example.ologyprofbackenddemo.common.enums.OpExceptionEnum;
 import com.example.ologyprofbackenddemo.common.exception.OpException;
-import com.example.ologyprofbackenddemo.model.DO.HistoryDO;
 import com.example.ologyprofbackenddemo.model.DO.HistoryGroupDO;
 import com.example.ologyprofbackenddemo.model.VO.HistoryGroupVO;
 import com.example.ologyprofbackenddemo.repository.impl.HistoryGroupRepository;
 import com.example.ologyprofbackenddemo.repository.impl.HistoryRepository;
 import com.example.ologyprofbackenddemo.service.HistoryGroupService;
-import com.example.ologyprofbackenddemo.service.HistoryService;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import org.springframework.stereotype.Service;
-import jakarta.annotation.Resource;
+import javax.annotation.Resource;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -50,15 +46,14 @@ public class HistoryGroupServiceImpl implements HistoryGroupService {
 
         //生成新的HistoryGroup记录，并插入
         HistoryGroupDO historyGroupDO = HistoryGroupDO.builder()
-                .groupName("对话")
+                .groupName("新建对话")
                 .userId(userId)
                 .groupId(newGroupId)
                 .build();
         historyGroupRepository.save(historyGroupDO);
 
         //生成HistoryVO，并返回
-        HistoryGroupVO historyGroupVO = new HistoryGroupVO(historyGroupDO);
-        return historyGroupVO;
+        return new HistoryGroupVO(historyGroupDO);
     }
 
     @Override
@@ -76,11 +71,11 @@ public class HistoryGroupServiceImpl implements HistoryGroupService {
         List<HistoryGroupDO> historyGroupDOList = historyGroupRepository.list(queryWrapper);
 
         // 创建一个空的List来存储HistoryGroupVO对象
-        List<HistoryGroupVO> historyGroupVOList = new ArrayList<>();
+        List<HistoryGroupVO> historyGroupVOList;
 
         // 将HistoryGroupDO列表转换为HistoryGroupVO列表
         historyGroupVOList = historyGroupDOList.stream()
-                .map(historyGroupDO -> new HistoryGroupVO(historyGroupDO))
+                .map(HistoryGroupVO::new)
                 .collect(Collectors.toList());
 
         return historyGroupVOList;
@@ -89,7 +84,7 @@ public class HistoryGroupServiceImpl implements HistoryGroupService {
     @Override
     @Transactional
     //前置：groupId不为空
-    public void deleteGroup(String userId,int groupId){
+    public Void deleteGroup(String userId,int groupId){
         //异常处理
         if(userId == null) throw new OpException(OpExceptionEnum.ILLEGAL_ARGUMENT);
 
@@ -109,5 +104,7 @@ public class HistoryGroupServiceImpl implements HistoryGroupService {
 
         // 然后删除 HistoryGroupDO 记录
         historyGroupRepository.removeById(groupId);
+
+        return null;
     }
 }

@@ -10,8 +10,7 @@ import lombok.Data;
 @Builder
 @TableName("history")
 
-public class
-HistoryDO {
+public class HistoryDO {
     private String userId;     //外键 varchar(32)
     private int groupId;       //外键 int
     private String conversation;//text

@@ -25,6 +25,8 @@ public enum OpExceptionEnum {
 
     USER_EMAIL_DUPLICATION("USER_EMAIL_DUPLICATION","邮箱已占用", OpResolveEnum.CHECK_ARGUMENT),
 
+    CODE_VERIFY_FAILED("CODE_VERIFY_FAILED","验证失败",OpResolveEnum.CHECK_ARGUMENT),
+
     LLM_ERROR("LLM_ERROR", "大模型错误", OpResolveEnum.CONTACT_RD),
 
     JWT_ERROR("JWT_ERROR", "JWT解析错误", OpResolveEnum.CONTACT_RD),

@@ -6,7 +6,7 @@ import lombok.Data;
 
 @Data
 @Builder
-@TableName("historygroup")
+@TableName("historyGroup")
 
 public class HistoryGroupDO {
     private String groupName;  //varchar(20)
